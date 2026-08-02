@@ -1,0 +1,30 @@
+# Packaging metadata. Installing is optional: mdcat runs directly from a
+# checkout, and install.sh performs an offline copy-based install. This file
+# exists so `pip install .` and `pipx install .` also work.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdcat"
+version = "0.2"
+description = "Render a Markdown file to the terminal, styled close to a proper Markdown reader"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "GPL-3.0-or-later" }
+keywords = ["markdown", "terminal", "cli", "ansi", "pager"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.scripts]
+mdcat = "mdcat:main"
+
+[tool.setuptools]
+py-modules = ["mdcat"]
